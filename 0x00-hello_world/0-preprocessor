@@ -1,2 +1,2 @@
 #!/bin/bash
-#include "main.c"
+#include <stdio.h>
