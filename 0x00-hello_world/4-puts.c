@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-in main()
+in main(void)
 {
     char string[52];
     strcpy(str, "Programming is like building a multilingual puzzle\n");
