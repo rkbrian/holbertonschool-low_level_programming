@@ -6,11 +6,11 @@
  *Return: value 0
  */
 
-in main(void)
+int main(void)
 {
 	char string[52];
 
-	strcpy(str, "Programming is like building a multilingual puzzle\n");
+	strcpy(string, "Programming is like building a multilingual puzzle\n");
 	puts(string);
 	return (0);
 }
