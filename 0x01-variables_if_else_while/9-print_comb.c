@@ -1,22 +1,24 @@
 #include <stdio.h>
 
 /**
- *main - base 10 digit numbers with comma using putchar only
- *Return: value 0
- */
+ * main - base 10 digit numbers with comma and space, using putchar only
+ * Return: value 0
+ **/
 
 int main(void)
 {
-	char d;
+	int d;
 
-	for (d = '0' ; d <= '8' ; d++)
+
+	for (d = '0' ; d <= '9' ; d++)
 	{
 		putchar(d);
-		putchar(",");
+		if (d < '9')
+		putchar(',');
+		putchar(' ');
 
 	}
-	putchar(9);
-	putchar("\n");
+	putchar('\n');
 
 	return (0);
 }
