@@ -7,11 +7,12 @@
 
 int main(void)
 {
-	char ch;
+	int i,j;
+	char s[30];
 
-	for (ch = 'a' ; ch <= 'd' ; ch++)
-		for (ch = 'f' ; ch <= 'p' ; ch++)
-			for (ch = 'r'; ch <= 'z' ; ch++)
+	for (i = '0' ; i <= '26' ; i++)
+		s[i] = 
+	for (ch2 = 'a' ; ch2 <= 'z' ; ch++)
 	{
 		putchar(ch);
 

@@ -7,18 +7,18 @@
 
 int main(void)
 {
-	char ch1;
-	char ch2;
+	char lttr1;
+	char lttr2;
 
-	for (ch1 = 'a' ; ch1 <= 'z' ; ch1++)
+	for (lttr1 = 'a' ; lttr1 <= 'z' ; lttr1++)
 	{
-		putchar(ch1);
+		putchar(lttr1);
 
 	}
 
-	for (ch2 = 'A' ; ch2 <= 'Z' ; ch2++)
+	for (lttr2 = 'A' ; lttr2 <= 'Z' ; lttr2++)
 	{
-		putchar(ch2);
+		putchar(lttr2);
 	}
 	putchar('\n');
 
