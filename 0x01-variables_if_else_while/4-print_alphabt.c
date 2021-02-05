@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 /**
  *main - alphabet using putchar only and no q or e
@@ -7,14 +8,14 @@
 
 int main(void)
 {
-	int i,j;
-	char s[30];
+	char lttr;
 
-	for (i = '0' ; i <= '26' ; i++)
-		s[i] = 
-	for (ch2 = 'a' ; ch2 <= 'z' ; ch++)
+	for (lttr = 'a' ; lttr <= 'z' ; lttr++)
 	{
-		putchar(ch);
+		if (lttr == 'q' || lttr == 'e')
+			continue;
+		else
+			putchar(lttr);
 
 	}
 	putchar('\n');
