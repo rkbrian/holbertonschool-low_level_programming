@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -masm=intel $CFILE.c -o $CFILE.s
+gcc -masm=intel $CFILE.c > $CFILE.s
