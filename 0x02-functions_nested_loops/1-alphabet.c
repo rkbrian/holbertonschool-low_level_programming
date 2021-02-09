@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- *main - alphabet using putchar only
- *Return: value 0
+ * print_alphabet - alphabet using _putchar only
+ * Return: value 0
  */
 
 void print_alphabet(void)
