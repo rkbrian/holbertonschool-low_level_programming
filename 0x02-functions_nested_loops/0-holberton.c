@@ -1,5 +1,4 @@
-#include <stdio.h)
-#include <string.h>
+#include <holberton.h)
 
 /**
  * main - Use putchar to print word Holberton, no printf or puts.
@@ -12,6 +11,6 @@ int main(void)
 	char holberton = "Holberton\n";
 
 		for (i = 0 ; i < strlen(holberton) ; i++)
-			putchar(holberton[i];)
+			putchar(holberton[i]);
 				return (0);
 }
