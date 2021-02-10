@@ -13,7 +13,7 @@ void times_table(void)
 		i++;
 		while (j <= '9')
 		{
-			return ((i * j));
+			_putchar((i * j));
 			j++;
 			if (j == '9')
 			continue;
