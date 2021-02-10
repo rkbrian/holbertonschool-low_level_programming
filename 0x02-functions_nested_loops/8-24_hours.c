@@ -1,8 +1,7 @@
 #include "holberton.h"
 
 /**
- * jack_bauer - returns 1 for int c lowercase check
- * @r: defined integer
+ * jack_bauer - hr and min
  * Return: value 0
  */
 
