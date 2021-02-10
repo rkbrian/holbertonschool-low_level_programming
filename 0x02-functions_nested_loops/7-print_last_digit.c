@@ -1,12 +1,18 @@
 #include "holberton.h"
 
 /**
- *main - prints the last digit of number generated
- *Return: 0
+ * print_last_digit - prints the last digit of number generated
+ * @i: input
+ * @j: return
+ * Return: 0
  */
 
-int print_last_digit(int n)
+int print_last_digit(int j)
 {
-	_putchar(n % 10)
-	return (0);
+	int i;	
+
+	while ((j = i % 10))
+	{
+		return j;
+	}
 }
