@@ -1,25 +1,33 @@
 #include "holberton.h"
 
 /**
- * times_table - 9x9
+ * times_table - 10 x 10 table starting with 0
  */
 
 void times_table(void)
 {
-	int i = '0', j = '0';
+	int i, j;
 
-	while (i <= '9')
+	for (i = 0 ; i <= 9 ; i++)
 	{
-		i++;
-		while (j <= '9')
+		for (j = 0 ; j <= 9 ; j++)
 		{
-			_putchar((i * j));
-			j++;
-			if (j == '9')
-			continue;
-			else
+			_putchar((i + '0') * (j + '0'));
+			if (j == 9)
+			{
+				continue;
+			}
+			else if ((i * j) < 10)
+			{
 				_putchar(',');
-			_putchar(' ');
+				_putchar(' ');
+				_putchar(' ');
+			}
+			else
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 	}
 }
