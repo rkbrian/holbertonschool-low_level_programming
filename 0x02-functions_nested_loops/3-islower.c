@@ -5,14 +5,10 @@
  * Return: value 0
  */
 
-int _islower(void)
+int _islower(int c)
 {
-	int i c;
-
-	for (i = 0 ; i < 3 ; i++)
-	{
-		_putchar(_islower[i]);
-	}
-	_putchar('\n');
-	return (0);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else
+		return (0);
 }
