@@ -2,7 +2,6 @@
 
 /**
  * jack_bauer - hr and min
- * Return: value 0
  */
 
 void jack_bauer(void)
