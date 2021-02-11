@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "holberton.h"
 
 /**
  * print_to_98 - print all natual numbers in order, to 98
@@ -9,7 +8,7 @@
 void print_to_98(int n)
 {
 	printf("%d", n);
-	while (!(n = 98))
+	while (n > 98 || n < 98)
 	{
 		if (n < 98)
 		{
@@ -22,5 +21,5 @@ void print_to_98(int n)
 		printf(", %d", n);
 		}
 	}
-	_putchar('\n');
+	putchar('\n');
 }
