@@ -1,17 +1,16 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
- * main - test function that prints if program works properly
+ * main - tests function that prints if integer is positive or negative
+ * Return: 0
  */
 
 int main(void)
 {
-	int i = 98;
+        int i;
 
-	if (positive_or_negative(i) == 0);
-	{
-		printf("0 is zero\n");
-	}
-	return (0);
+        i = 0;
+        positive_or_negative(i);
+
+        return (0);
 }
