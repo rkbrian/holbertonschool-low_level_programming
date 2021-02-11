@@ -1,14 +1,14 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
-
 #include <stdio.h>
 
-/* This will be my own header for any strange function used
-   in the directory, if any. */
+/**
+ * _isupper - checks for uppercase character
+ * Return: 0
+ */
 
-void positive_or_negative(int i);
-int largest_number(int a, int b, int c);
-int convert_day(int month, int day);
-void print_remaining_days(int month, int day, int year);
-
-#endif /* HOLBERTON_H */
+int _isupper(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
+}
