@@ -7,7 +7,8 @@
 
 int main()
 {
-	int comp, pr, i;
+	int pr, i;
+	long int comp;
 
 	comp = 340;
 	pr = comp - 1;
@@ -16,17 +17,17 @@ int main()
 		pr--;
 		if (comp % pr == 0)
 		{
-			i = pr - 1;
-			while (i <= 2)
+			i = 2;
+			while (i <= pr)
 			{
-				i--;
+				i++;
 				if (pr % i > 0)
 				{
-					break;
+					printf("%d\n", pr);
+				break;
 				}
 			}
 		}
 	}
-	printf("%d\n", pr);
 	return (0);
 }
