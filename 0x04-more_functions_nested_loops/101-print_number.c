@@ -2,38 +2,36 @@
 
 /**
  * print_number - to print an integer
- * @n: the integer
+ * @n: input integer
+ * x: index of 10s
+ * d: digit to be printed
+ * mul: multiple of 10s
  */
 
 void print_number(int n)
 {
-	int x;
-	int i;
+	int x = 0, d, mul = 1; /* mul = 1 at x = 0 for single digit n */
 
-	x = 1;
-	if (n < 0)
+	if (n == 0)
+	{
+		_putchar('0');
+	}
+	else if (n < 0)
 	{
 		_putchar('-');
-		i = n * (-1);
+		n = n * (-1);
 	}
-	else
+	while (mul <= n) /* loop to find the mul closest to n */
 	{
-		i = n;
+		mul = mul * 10;
+		x++;
 	}
-	while (i >= 1)
-	{
-		x = x * 10;
-		x = x + (i % 10);
-		i = i / 10;
-	}
-	while (x >= 0)
-	{
-		_putchar((x % 10) + '0');
-		x = x / 10;
-		if (x < 1)
-		{
-			break;
-		}
-x = x / 10
+	mul = mul / 10; /* now mul has the same digit count as n */
+	while (mul != 0) /* loop for mul decrement to print d at each mul */
+	{ /* d could be 0 anywhere in n, use mul as control var to play safe */
+		d = n / mul;
+		_putchar(d + '0');
+		n = n - d * mul; /* behead n for next d */
+		mul = mul / 10;
 	}
 }
