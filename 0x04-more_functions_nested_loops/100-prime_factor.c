@@ -7,16 +7,27 @@
 
 int main(void)
 {
-	unsigned long int pr, comp;
+	unsigned long int comp;
+	unsigned long int pr, i;
 
 	comp = 612852475143;
-	for (pr = 1 ; pr < comp ; pr++)
+	for (pr = comp - 1 ; pr > 1 ; pr--)
 	{
-		if (comp % pr == 0)
+		if ((comp % pr) == 0)
 		{
-			comp = comp / pr;
+			for (i = 2 ; i < pr ; i++)
+			{
+				if (pr % i == 0)
+				{
+					break;
+				}
+			}
+			if (i == pr)
+			{
+				printf("%lu\n", pr);
+				break;
+			}
 		}
 	}
-	printf("%lu\n", pr);
 	return (0);
 }
