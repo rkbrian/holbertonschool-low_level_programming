@@ -8,10 +8,10 @@
 
 void swap_int(int *a, int *b)
 {
-	int i = a, j = b;
+	int i = *a, j = *b;
 
 	a = &j;
 	b = &i;
-	_putchar(*a / 10 + '0');
-	_putchar(*b / 10 + '0');
+	_putchar(*a + '0');
+	_putchar(*b + '0');
 }
