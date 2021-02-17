@@ -3,14 +3,14 @@
 /**
  * _strlen - pointer to find string length
  * @s: string input
- * Return: 0
+ * Return: string length
  */
 
 int _strlen(char *s)
 {
 	int i = 0;
 
-	while (s[i] != '\0');
+	while (s[i] != '\0')
 	{
 		i++;
 	}
