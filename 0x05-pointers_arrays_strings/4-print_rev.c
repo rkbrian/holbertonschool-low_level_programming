@@ -2,17 +2,21 @@
 
 /**
  * print_rev - reverse alphabet using putchar only
- * Return: value 0
+ * @s: reversed string
  */
 
 void print_rev(char *s)
 {
-	char var = *s;
 	int i = 0;
 
-	while (i++)
+	while (s[i] != '\0')
 	{
-		var--;	
-		s = &var;
+		i++;
 	}
+	while (i >= 0)
+	{
+		_putchar(s[i]);
+		i--;
+	}
+	_putchar('\n');
 }
