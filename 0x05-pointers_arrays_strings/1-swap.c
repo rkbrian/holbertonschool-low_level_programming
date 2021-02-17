@@ -12,6 +12,4 @@ void swap_int(int *a, int *b)
 
 	a = &j;
 	b = &i;
-	_putchar(*a + '0');
-	_putchar(*b + '0');
 }
