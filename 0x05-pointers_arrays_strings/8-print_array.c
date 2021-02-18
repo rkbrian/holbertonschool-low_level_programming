@@ -1,8 +1,9 @@
 #include "holberton.h"
 
 /**
- * print_array - pointer to print a string
+ * print_array - pointer to print array
  * @a: string
+ * @n: number of elements in array
  */
 
 void print_array(int *a, int n)
