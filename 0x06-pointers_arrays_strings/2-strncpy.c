@@ -19,6 +19,10 @@ char *_strncpy(char *dest, char *src, int n)
 		dest++;
 		src++;
 		i++;
+		if (*src == '\0')
+		{
+			break;
+		}
 	}
 	return (c);
 }
