@@ -7,7 +7,7 @@
  * Return: p
  */
 
-char *leet(char *)
+char *leet(char *p)
 {
 	int i = 0, j;
 	char l[30], u[30], *p = *;
