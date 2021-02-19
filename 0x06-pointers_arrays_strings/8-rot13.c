@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include "holberton.h"
 
 /**
  * rot13 - function to do rot13 encoding
@@ -9,24 +8,21 @@
 
 char *rot13(char *p)
 {
-	int i = 0, j = 0;
-	char *q, *r;
+	int i, j;
+	char a[] = "abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char q[] = "nopqrstuvwxyzabcdefghijklm
+NOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (; p[i] != 0 ; i++)
+	for (i = 0 ; p[i] != 0 ; i++)
 	{
-			q[i] = p[i] - 13;
-			r[i] = p[i] + 13;
-		if ((p[i] >= 97 && p[i] <= 122) || (p[i] >= 65 && p[i] <= 90))
+		for (j = 0 ; j < 52 ; j++)
 		{
-
-
+			if (p[i] == a[j])
+			{
+				p[i] = q[j];
+			}
 		}
-	}
-	for (; j <= i ; j++)
-	{
-		p[j] = q[j];
-		p[j] = q[j];
-		q[j] = p[j];
 	}
 	return (p);
 }
