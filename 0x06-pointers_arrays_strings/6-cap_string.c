@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include <holberton.h>
 
 /**
  * cap_string - function to cap each word
