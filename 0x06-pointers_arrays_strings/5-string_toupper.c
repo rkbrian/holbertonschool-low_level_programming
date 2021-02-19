@@ -2,24 +2,20 @@
 #include <string.h>
 
 /**
- * string_toupper - alphabet using putchar only and no q or e
+ * string_toupper - function to replace lower case letter w upper case
  * @: output string
  * Return: p
  */
 
-char *string_toupper(char *)
+char *string_toupper(char *p)
 {
-	int i = 0, j;
-	char l[30], u[30], *p = *;
+	int i;
 
-	for (l[i] = 'a', u[i] = 'A' ; l[i] <= 'z' ; i++)
+	for (i = 0 ; p[i] != '\0' ; i++)
 	{
-	}
-	for (j = 0 ; j <= i ; j++)
-	{
-		if ( *p == l[j])
+		if (*p >= 97 && *p <= 122)
 		{
-			*p = u[j];
+			*p = *p - 32;
 		}
 	}
 	return (p);
