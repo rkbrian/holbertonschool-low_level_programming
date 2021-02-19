@@ -9,13 +9,13 @@
 
 char *cap_string(char *p)
 {
-	int i;
+	int i, j;
 
-	for (i = 0 ; p[i] != '\0' ; i++)
+	for (i = 0, j = 1 ; p[j] != '\0' ; i++, j++)
 	{
-		if ((p[i] >= 97 && p[i] <= 122) && (p[i - 1] < 97 || p[i - 1] > 122))
+		if ((p[j] >= 97 && p[j] <= 122) && (p[i] < 97 || p[i] > 122) && (p[i] < 65 || p[i] > 90))
 		{
-			p[i] = p[i] - 32;
+			p[j] = p[j] - 32;
 		}
 	}
 	return (p);
