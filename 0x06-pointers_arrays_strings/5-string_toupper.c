@@ -3,7 +3,7 @@
 
 /**
  * string_toupper - function to replace lower case letter w upper case
- * @: output string
+ * @p: output string
  * Return: p
  */
 
