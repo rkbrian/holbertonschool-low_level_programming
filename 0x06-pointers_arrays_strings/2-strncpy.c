@@ -10,8 +10,7 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	unsigned long i = 0, j;
-	char *c = dest;
+	long i = 0, j;
 
 	for (j = 0 ; src[j] != '\0' ; j++)
 	{
@@ -25,5 +24,5 @@ char *_strncpy(char *dest, char *src, int n)
 			break;
 		}
 	}
-	return (c);
+	return (dest);
 }
