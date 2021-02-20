@@ -19,6 +19,7 @@ char *leet(char *p)
 			if (p[i] == a[j] || p[i] == a[j + 5])
 			{
 				p[j] = q[j];
+				break;
 			}
 		}
 	}
