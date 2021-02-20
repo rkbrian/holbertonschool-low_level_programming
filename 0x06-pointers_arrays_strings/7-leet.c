@@ -14,7 +14,7 @@ char *leet(char *p)
 
 	for (i = 0; p[i] != 0 ; i++)
 	{
-		for (j = 0; j < 5; j++)
+		for (j = 0; j < 10; j++)
 		{
 			if (p[i] == a[j])
 			{
