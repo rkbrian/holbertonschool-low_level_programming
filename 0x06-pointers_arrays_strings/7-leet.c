@@ -10,13 +10,13 @@ char *leet(char *p)
 {
 	int i, j;
 	char a[] = "aeotlAEOTL";
-	char q[] = "43071";
+	char q[] = "4307143071";
 
 	for (i = 0; p[i] != 0 ; i++)
 	{
 		for (j = 0; j < 5; j++)
 		{
-			if (p[i] == a[j] || p[i] == a[j + 5])
+			if (p[i] == a[j])
 			{
 				p[j] = q[j];
 				break;
