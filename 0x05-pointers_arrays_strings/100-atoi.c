@@ -8,7 +8,7 @@
 
 int _atoi(char *s)
 {
-	unsigned int *tstr;
+	long *tstr;
 	int i, j = 0;
 
 	for (i = 0 ; s[i] != '\0' ; i++, j++)
@@ -22,7 +22,7 @@ int _atoi(char *s)
 			break;
 		}
 	}
-	while (i > 0)
+	while (i > 0 ; tstr != '\0')
 	{
 		i--;
 		if (s[i] == '-')
@@ -30,7 +30,7 @@ int _atoi(char *s)
 			tstr[j] = -tstr[j];
 		}
 	}
-	if (tstr = '\0')
+	if (tstr[j] == '\0')
 	{
 		return (0);
 	}
