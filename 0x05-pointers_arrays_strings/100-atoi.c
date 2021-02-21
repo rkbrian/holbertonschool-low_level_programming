@@ -8,14 +8,15 @@
 
 int _atoi(char *s)
 {
-	long *tstr;
+	int *tstr;
 	int i, j = 0;
 
-	for (i = 0 ; s[i] != '\0' ; i++, j++)
+	for (i = 0 ; s[i] != '\0' ; i++)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 		tstr[j] = s[i];
+		j++;
 		}
 		if (tstr[j] >= '0' && (s[i] < '0' || s[i] > '9'))
 		{
