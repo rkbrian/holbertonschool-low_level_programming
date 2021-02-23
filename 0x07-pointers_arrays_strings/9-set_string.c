@@ -12,5 +12,7 @@ void set_string(char **s, char *to)
 
 	s[1] = to;
 	for (i = 0; s[1][i] != '\0'; i++)
-	_putchar (s[l][i]);
+	{
+		_putchar (s[l][i]);
+	}
 }

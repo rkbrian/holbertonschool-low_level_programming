@@ -9,17 +9,18 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, j;
-	char **p;
+	unsigned int i, j, k = 0;
 
-	for (i = 0 ; accept[i] != '\0' ; i++)
+
+	for (j = 0 ; s[j] != '\0' && s[j] != ' '; j++)
 	{
+		for (i = 0 ; accept[i] != '\0' ; i++)
+		{
+			if (s[j] == accept[i])
+			{
+				k++;
+			}
+		}
 	}
-	for ()
-	p[&s][accept];
-	for ()
-	{
-		s[i] = b;
-	}
-	return (s);
+	return (k);
 }
