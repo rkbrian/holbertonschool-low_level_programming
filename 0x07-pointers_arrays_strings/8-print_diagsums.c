@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
  * print_diagsums - function to print diagnal sum of a 2d array
@@ -16,5 +16,5 @@ void print_diagsums(int *a, int size)
 		k = k + a[((size + 1) * i)];
 		l = l + a[((size - 1) * (i + 1))];
 	}
-	printf("%d, %d\n", k, l);
+	printf("%ld, %ld\n", k, l);
 }
