@@ -9,10 +9,14 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i;
+	unsigned int i, j;
 	char **p;
 
-	p = &s;
+	for (i = 0 ; accept[i] != '\0' ; i++)
+	{
+	}
+	for ()
+	p[&s][accept];
 	for ()
 	{
 		s[i] = b;
