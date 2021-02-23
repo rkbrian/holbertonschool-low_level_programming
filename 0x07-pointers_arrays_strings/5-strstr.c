@@ -14,26 +14,22 @@ char *_strstr(char *haystack, char *needle)
 	for (j = 0; needle[j] != '\0'; j++)
 	{
 	}
-	for (i = 0; haystack[i] != '\0'; i++)
+	for (i = 0, haystack[i] != '\0'; i++)
 	{
-		for (k = 0; k <= j; k++)
+		for (k = 0; k <= j && haystack[i + k] != '\0'; k++)
 		{
-			if (haystack[i] != s[j])
+			if (haystack[i + k] == needle[k])
+			{
+				return (needle[k]);
+			}
+		}
+		if (k == j && haystack[i + k] == needle[j])
 		{
 			break;
 		}
 	}
-		if (s[j] == accept[i])
-		{
-			break;
-		}
-	}
-	if (s[j] == '\0')
+	if (haystack[i] == '\0' || haystack[i + k] != needle[j])
 	{
 		return (NULL);
-	}
-	else
-	{
-		return (&s[j]);
 	}
 }
