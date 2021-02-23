@@ -9,10 +9,11 @@
 
 char *_strchr(char *s, char c)
 {
-	unsigned int i, j;
+	unsigned int i, j, k;
 
-	for (j = 0; s[j] != '\0'; j++)
+	for (j = 0, k = 1; s(j) != '\0' && !(s[j] = '\0' && s[k] != '\0') ; j++)
 	{
+		k++;
 	}
 	for (i = 0; i < j; i++)
 	{
