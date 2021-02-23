@@ -3,6 +3,7 @@
 /**
  * print_diagsums - function to print diagnal sum of a 2d array
  * @a: source 2d array
+ * @size: array size
  */
 
 void print_diagsums(int *a, int size)
@@ -19,9 +20,10 @@ void print_diagsums(int *a, int size)
 				k = k + (a[j][i]);
 			}
 		}
-		if (j < size)
+		if (j < size - 1)
 		{
 			_putchar(', ');
 		}
 	}
+	_putchar('\n');
 }
