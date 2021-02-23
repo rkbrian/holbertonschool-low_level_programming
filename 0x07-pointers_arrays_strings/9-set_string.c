@@ -8,5 +8,5 @@
 
 void set_string(char **s, char *to)
 {
-	s[1] = to;
+	s[0] = to;
 }
