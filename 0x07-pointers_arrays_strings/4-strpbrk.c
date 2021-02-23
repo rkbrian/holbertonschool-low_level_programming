@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * strpbrk - function to locate 1st appearence of accept
+ * _strpbrk - function to locate 1st appearence of accept
  * @s: char string
  * @accept: string with target char
  * Return: substring
@@ -11,7 +11,7 @@ char *_strpbrk(char *s, char *accept)
 {
 	unsigned int i, j;
 
-	for (j = 0 ; s[j] != '\0' && s[j] != ' '; j++)
+	for (j = 0 ; s[j] != '\0'; j++)
 	{
 		for (i = 0 ; accept[i] != '\0' ; i++)
 		{
