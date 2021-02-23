@@ -21,9 +21,9 @@ char *_strchr(char *s, char c)
 			break;
 		}
 	}
-	if (i == j)
+	if (i == j || (s[i] == '0' && i < j))
 	{
-		return NULL;
+		return (NULL);
 	}
 	else
 	{
