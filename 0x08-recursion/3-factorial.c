@@ -3,6 +3,7 @@
 /**
  * factorial - function to return factorial
  * @n: given number
+ * Return: factorial or -1
  */
 
 int factorial(int n)
@@ -17,6 +18,6 @@ int factorial(int n)
 	}
 	else
 	{
-		return (n * factorial (n - 1));
+		return (n * factorial(n - 1));
 	}
 }
