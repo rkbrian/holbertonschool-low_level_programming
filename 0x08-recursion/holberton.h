@@ -17,8 +17,8 @@ int is_prime_number(int n);
 int is_palindrome(char *s);
 int _putchar(char c);
 int primesearch(int suspr, int pr);
-
-
+int rev_str(char *s);
+int charcomp(char *s, int i, int j);
 
 
 #endif
