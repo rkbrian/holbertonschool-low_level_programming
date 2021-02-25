@@ -19,6 +19,6 @@ int _putchar(char c);
 int primesearch(int suspr, int pr);
 int rev_str(char *s);
 int charcomp(char *s, int i, int j);
-
+int sqrcalc(int n, int i);
 
 #endif
