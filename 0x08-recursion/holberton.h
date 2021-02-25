@@ -20,5 +20,6 @@ int primesearch(int suspr, int pr);
 int rev_str(char *s);
 int charcomp(char *s, int i, int j);
 int sqrcalc(int n, int i);
+int wildcmp(char *s1, char *s2);
 
 #endif
