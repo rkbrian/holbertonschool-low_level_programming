@@ -21,5 +21,8 @@ int rev_str(char *s);
 int charcomp(char *s, int i, int j);
 int sqrcalc(int n, int i);
 int wildcmp(char *s1, char *s2);
+int _maniac(char *s1, char *s2, int i, int j, char w);
+int _str_comp(char *s1, char *s2, int i, int j);
+
 
 #endif
