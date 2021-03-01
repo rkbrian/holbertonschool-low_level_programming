@@ -5,30 +5,30 @@
 /**
  * main - print sum of arguments
  * @argc: argument count
- * @argv: argument string
+ * @argv: argument array
  * Return: 0
  */
 
 int main(int argc, char *argv[])
 {
-	int i, j = 0;
+	int i, j = 0, k;
 
 	for (i = 1; i < argc; i++)
 	{
-		if (isdigit(*argv[i]) == 0 || *argv[i] < 0)
+		for (k = 0; argv[i][k]; k++)
 		{
-			printf("Error\n");
-			return (1);
+			if (isdigit(argv[i][k]) == 0 || *argv[i] < 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			else if (argc == 1)
+			{
+				printf("0\n");
+				return (1);
+			}
 		}
-		else if (argc == 1)
-		{
-			printf("0\n");
-			return (0);
-		}
-		else
-		{
-			j = j + atoi(argv[i]);
-		}
+		j = j + atoi(argv[i]);
 	}
 	printf("%d\n", j);
 	return (0);
