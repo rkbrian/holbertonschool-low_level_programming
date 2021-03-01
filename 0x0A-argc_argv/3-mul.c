@@ -10,8 +10,10 @@
 
 int main(int argc, char *argv[])
 {
-	long i = *argv[2] + '0', j = *argv[3] + '0';
+	long i, j;
 
+	i = atoi(argv[1]);
+	j = atoi(argv[2]);
 	if (argc == 3)
 	{
 		printf("%ld\n", i * j);
