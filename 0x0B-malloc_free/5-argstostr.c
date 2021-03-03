@@ -5,25 +5,49 @@
  * argstostr - function to cat arguments
  * @ac: argument string count
  * @av: double string pointer for argument
- * Return: av
+ * Return: ptr to new string or null
  */
 
 char *argstostr(int ac, char **av)
 {
+	int i, j, k, len = 0;
+	char *s;
+
 	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
 	}
-	*av = (int *)malloc(argc - 1);
-	for (ac = 0; ac < argc - 1; ac++)
+	for (i = 0; i < ac; i++)
 	{
-		*av = argv[ac] + '\n';
+		len = len + _strlen(av[i]);
 	}
-	if (av == NULL)
+	s = malloc(sizeof(char) * len + 1);
+	if (s == NULL)
 	{
 		return (NULL);
 	}
-	return ();
+	for (i = 0, k = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++, k++)
+		{
+			s[k] = av[i][j];
+		}
+		s[k++] = '\n';
+	}
+	s[k] = '\0';
+	return (s);
 }
+/**
+ * _strlen - function to find string length
+ * @s: string
+ * Return: string length
+ */
+int _strlen(char *s)
+{
+	int n;
 
-brainiac
+	for (n = 0; s[n] != '\0'; n++)
+	{
+	}
+	return (n);
+}
