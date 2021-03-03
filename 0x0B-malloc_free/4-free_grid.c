@@ -2,8 +2,13 @@
 #include <stdlib.h>
 
 /**
- * alloc_grid - fuction to return ptr to a 2d array
- * @width: width of 2d array
- * @height: height of 2d array
- *Return: the pointer
+ * free_grid - fuction to free malloc of ptr to a 2d array
+ * @grid: 2d array
+ * @height: height of grid
  */
+
+void free_grid(int **grid, int height)
+{
+	*grid = (int *)malloc(sizeof(int) * height);
+	free(grid);
+}
