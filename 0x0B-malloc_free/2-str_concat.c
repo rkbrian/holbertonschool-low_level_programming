@@ -13,9 +13,20 @@ char *str_concat(char *s1, char *s2)
 	int i, j, k;
 	char *cats;
 
-	if (s1 == NULL && s2 == NULL)
+	if (s1 == NULL)
 	{
-		return ('\0');
+		if (s2 != NULL)
+		{
+			return (s2);
+		}
+		else
+		{
+			return (NULL);
+		}
+	}
+	if (s1 != NULL && s2 == NULL)
+	{
+		return (s1);
 	}
 	for (i = 0; s1[i] != '\0'; i++)
 	{
