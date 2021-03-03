@@ -32,7 +32,7 @@ char *argstostr(int ac, char **av)
 		{
 			s[k] = av[i][j];
 		}
-		s[k++] = '\n';
+		s[k] = '\n';
 	}
 	s[k] = '\0';
 	return (s);
