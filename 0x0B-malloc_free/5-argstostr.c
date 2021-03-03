@@ -10,7 +10,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	int i, j, k, len = 0;
+	int i, j, k, sublen = 0;
 	char *s;
 
 	if (ac == 0 || av == NULL)
@@ -19,12 +19,13 @@ char *argstostr(int ac, char **av)
 	}
 	for (i = 0; i < ac; i++)
 	{
-		len = len + _strlen(av[i]);
+		sublen = sublen + _strlen(av[i]);
 	}
-	s = malloc(sizeof(char) * len + 1);
+	s = malloc(sizeof(char) * sublen + 1);
 	if (s == NULL)
 	{
 		return (NULL);
+		free(s);
 	}
 	for (i = 0, k = 0; i < ac; i++)
 	{
@@ -32,16 +33,18 @@ char *argstostr(int ac, char **av)
 		{
 			s[k] = av[i][j];
 		}
-		s[k] = '\n';
+		s[k++] = '\n';
 	}
 	s[k] = '\0';
 	return (s);
 }
+
 /**
  * _strlen - function to find string length
  * @s: string
  * Return: string length
  */
+
 int _strlen(char *s)
 {
 	int n;
