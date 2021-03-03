@@ -15,18 +15,11 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL)
 	{
-		if (s2 != NULL)
-		{
-			return (s2);
-		}
-		else
-		{
-			return (NULL);
-		}
+		s1 = "";
 	}
-	if (s1 != NULL && s2 == NULL)
+	if (s2 == NULL)
 	{
-		return (s1);
+		s2 = "";
 	}
 	for (i = 0; s1[i] != '\0'; i++)
 	{
@@ -47,6 +40,5 @@ char *str_concat(char *s1, char *s2)
 	{
 		cats[k] = s2[k - i];
 	}
-	cats[k] = '\0';
 	return (cats);
 }
