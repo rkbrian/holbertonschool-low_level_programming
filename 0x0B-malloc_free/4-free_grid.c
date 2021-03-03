@@ -9,6 +9,10 @@
 
 void free_grid(int **grid, int height)
 {
+	if (grid == NULL)
+	{
+		free(grid);
+	}
 	grid = malloc(sizeof(int *) * height);
 	free(grid);
 }
