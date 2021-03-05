@@ -9,25 +9,14 @@
 
 char *_strchr(char *s, char c)
 {
-	unsigned int i, j, k;
+	unsigned int j;
 
-	for (j = 0, k = 1; s[j] != '\0'; j++, k++)
+	for (j = 0; s[j] != '\0'; j++)
 	{
-		if (s[j] == '\0' && s[k] != '\0')
+		if (s[j] == c)
 		{
-			j++;
+			return (s + j);
 		}
 	}
-	for (i = 0; i <= j; i++)
-	{
-		if (s[i] == c)
-		{
-			break;
-		}
-	}
-	if (i == j || (s[i] == '0' && i < j))
-	{
-		return ('\0');
-	}
-	return (&s[i]);
+	return (NULL);
 }
