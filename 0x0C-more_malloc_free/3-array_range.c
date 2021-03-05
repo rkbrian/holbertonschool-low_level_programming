@@ -21,5 +21,9 @@ int *array_range(int min, int max)
 	{
 		arr[i] = num;
 	}
+	if (arr == NULL)
+	{
+		return (NULL);
+	}
 	return (arr);
 }
