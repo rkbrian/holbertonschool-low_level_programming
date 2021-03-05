@@ -13,3 +13,11 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 int *array_range(int min, int max);
 
 #endif
+
+/* #include <unistd.h>
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+*/
