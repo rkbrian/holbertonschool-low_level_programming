@@ -4,6 +4,7 @@
 /**
  * malloc_checked - function to allocate memory
  * @b: integer input
+ * Return: pointer or 98
  */
 
 void *malloc_checked(unsigned int b)
