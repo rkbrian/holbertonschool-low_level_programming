@@ -12,10 +12,6 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	int i, j, arlen;
 
-	if (src == NULL)
-	{
-		return (NULL);
-	}
 	for (arlen = 0; src[arlen] != '\0'; arlen++)
 	{
 	}
