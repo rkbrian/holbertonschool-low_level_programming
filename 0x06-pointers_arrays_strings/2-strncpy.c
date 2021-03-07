@@ -19,12 +19,17 @@ char *_strncpy(char *dest, char *src, int n)
 	for (arlen = 0; src[arlen] != '\0'; arlen++)
 	{
 	}
-	for (i = 0, j = 0; i < n && j < n && src[j] != '\0'; i++, j++)
+	for (i = 0, j = 0; dest[i] != '\0' && j < n; i++, j++)
 	{
 		dest[i] = src[j];
 		if (src[j] == '\0')
 		{
+			dest[i] = '\0';
 			break;
+		}
+		if (j == arlen)
+		{
+			j = j - arlen;
 		}
 	}
 	return (dest);
