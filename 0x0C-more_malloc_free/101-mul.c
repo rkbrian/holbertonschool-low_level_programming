@@ -10,9 +10,13 @@
 
 int _mainac(char *a, char *b)
 {
-	unsigned long int i, c = a * b, *s;
+	unsigned long int i, j, *s;
 
-	if (s == )
+/* Rounding int a and b to the nearest 10's multiples */
+/* gives */
+	for (i = 0; a[i] != '\0')
+
+	if (s == NULL)
 	s = malloc();
 	for (i = 0; i = )
 		_putchar(i);
