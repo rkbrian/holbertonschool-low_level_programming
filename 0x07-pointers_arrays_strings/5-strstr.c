@@ -9,33 +9,31 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int i = 0, j = 0, hl, nl;
+	unsigned int i, j, hal, nel;
 
-	if (needle == NULL)
+	for (hal = 0; haystack[hal] != '\0'; hal++)
+	{
+	}
+	for (nel = 0; needle[nel] != '\0'; nel++)
+	{
+	}
+	if (needle == NULL || nel == 0)
+	{
+		return (needle);
+	}
+	if (*haystack == '\0'|| nel > hal)
 	{
 		return (NULL);
 	}
-	else if (*haystack == *needle)
+	for (i = 0; i <= hal; i++)
 	{
-		return (needle);
-	}
-	hl = sizeof(haystack) / sizeof(char);
-	nl = sizeof(needle) / sizeof(char);
-	while (i < (hl - nl) && j < nl)
-	{
-		if (haystack[i + j] != needle[j])
+		for (j = 0; j <= nel; j++)
 		{
-			i++;
-			j = 0;
+			if (haystack[i] == needle[j])
+			{
+				return (needle);
+			}
 		}
-		else
-		{
-			j++;
-		}
-	}
-	if (j == nl - 1)
-	{
-		return (needle);
 	}
 	return (NULL);
 }
