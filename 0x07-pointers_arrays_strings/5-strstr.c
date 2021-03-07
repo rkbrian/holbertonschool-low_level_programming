@@ -40,7 +40,6 @@ char *_strstr(char *haystack, char *needle)
 			if (j == nel - 1)
 			{
 				return (needle);
-				break;
 			}
 		}
 	}
