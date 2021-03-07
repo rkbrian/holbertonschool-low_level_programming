@@ -11,19 +11,19 @@ char *_strstr(char *haystack, char *needle)
 {
 	unsigned int i, j, hal, nel;
 
+	if (needle == NULL)
+	{
+		return (haystack);
+	}
+	if (*haystack == '\0')
+	{
+		return (NULL);
+	}
 	for (hal = 0; haystack[hal] != '\0'; hal++)
 	{
 	}
 	for (nel = 0; needle[nel] != '\0'; nel++)
 	{
-	}
-	if (needle == NULL || nel == 0)
-	{
-		return (needle);
-	}
-	if (*haystack == '\0' || nel > hal)
-	{
-		return (NULL);
 	}
 	for (i = 0; i < hal; i++)
 	{
@@ -39,7 +39,7 @@ char *_strstr(char *haystack, char *needle)
 			}
 			if (j == nel - 1)
 			{
-				return (needle);
+				return (haystack + (i - nel));
 			}
 		}
 	}
