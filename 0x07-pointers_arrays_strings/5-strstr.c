@@ -21,21 +21,26 @@ char *_strstr(char *haystack, char *needle)
 	{
 		return (needle);
 	}
-	if (*haystack == '\0'|| nel > hal)
+	if (*haystack == '\0' || nel > hal)
 	{
 		return (NULL);
 	}
-	for (i = 0; i <= hal; i++)
+	for (i = 0; i < hal; i++)
 	{
-		for (j = 0; j <= nel; j++)
+		for (j = 0; j < nel; j++)
 		{
-			if (haystack[i] == needle[j])
+			if (haystack[i] != needle[j])
 			{
-				j++;
+				break;
 			}
-			if (j == nel)
+			else
+			{
+				i++;
+			}
+			if (j == nel - 1)
 			{
 				return (needle);
+				break;
 			}
 		}
 	}

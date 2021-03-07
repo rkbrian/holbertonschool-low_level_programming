@@ -9,7 +9,7 @@
 int main(void)
 {
 	char *s = "First, solve the problem. Then, write the code.";
-	char *f = "";
+	char *f = "solve";
 	char *t;
 
 	t = _strstr(s, f);
