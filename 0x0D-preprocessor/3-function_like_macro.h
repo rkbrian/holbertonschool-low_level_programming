@@ -1,5 +1,5 @@
-#ifndef TIMEYWIMEY
-#define TIMEYWIMEY
-#define ABS(x) ((x) >= (-x) ? (x) : (-x))
+#ifndef TARDIS
+#define TARDIS
+#define ABS(x) ((x) >= (0) ? (x) : ((x) * (-1)))
 
 #endif
