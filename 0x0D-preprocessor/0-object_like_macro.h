@@ -1,10 +1,6 @@
 #ifndef SIZE
 #define SIZE
 
-int SIZE(void)
-{
-	SIZE = 1024;
-	return (SIZE);
-}
+SIZE = 1024;
 
 #endif /* SIZE.H */
