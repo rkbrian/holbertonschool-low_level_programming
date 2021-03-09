@@ -12,7 +12,6 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *who;
-	char *namp, *ownp;
 	int i, j, k, l;
 
 	for (i = 0; name[i] != '\0'; i++)
@@ -24,31 +23,28 @@ dog_t *new_dog(char *name, float age, char *owner)
 	who = malloc(sizeof(struct dog));
 	if (who == NULL)
 	{
-		free(who);
 		return (NULL);
 	}
-	namp = malloc(sizeof(char) * i + 1);
-	if (namp == NULL)
+	who->name = malloc(sizeof(char) * i + 1);
+	if (who->name == NULL)
 	{
-		free(namp);
+		free(who);
 	}
-	ownp = malloc(sizeof(char) * j + 1);
-	if (ownp == NULL)
+	who->owner = malloc(sizeof(char) * j + 1);
+	if (who->owner == NULL)
 	{
-		free(ownp);
+		free(who);
+		free(who->name);
 	}
 	for (k = 0; name[k] != '\0'; k++)
 	{
-		namp[k] = name[k];
+		who->name[k] = name[k];
 	}
-	namp[k] = '\0';
+	who->name[k] = '\0';
 	for (l = 0; owner[l] != '\0'; l++)
 	{
-		ownp[l] = owner[l];
+		who->owner[l] = owner[l];
 	}
-	ownp[l] = '\0';
-	who->name = namp;
-	who->age = age;
-	who->owner = ownp;
+	who->owner[l] = '\0';
 	return (who);
 }
