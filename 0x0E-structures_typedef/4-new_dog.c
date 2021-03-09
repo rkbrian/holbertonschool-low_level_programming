@@ -32,10 +32,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		namp[k] = name[k];
 	}
+	namp[k] = '\0';
 	for (l = 0; owner[l] != '\0'; l++)
 	{
 		ownp[l] = owner[l];
 	}
+	ownp[l] = '\0';
 	who->name = namp;
 	who->age = age;
 	who->owner = ownp;
