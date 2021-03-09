@@ -4,12 +4,14 @@
 #include <stdio.h>
 
 /**
+ * dog_t - new name for struct dog
  * struct dog - new type of structure
  * @name: name string
  * @age: numbers
  * @owner: owner string
  */
 
+typedef struct dog dog_t
 struct dog
 {
 	char *name;
@@ -19,16 +21,5 @@ struct dog
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
-
-/**
- * dog_t - new name for type struct dog
- */
-
-typedef struct dog dog_t
-{
-	char *name;
-	float age;
-	char *owner;
-};
 
 #endif
