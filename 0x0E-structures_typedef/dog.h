@@ -4,13 +4,14 @@
 #include <stdio.h>
 
 /**
+ * dog_t - new name of struct dog
  * struct dog - new type of structure
  * @name: name string
  * @age: numbers
  * @owner: owner string
  */
 
-struct dog
+typedef struct dog dog_t
 {
 	char *name;
 	float age;
