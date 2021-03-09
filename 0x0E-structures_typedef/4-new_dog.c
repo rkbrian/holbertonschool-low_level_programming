@@ -36,6 +36,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(who);
 		free(who->name);
 	}
+	who->age = age;
 	for (k = 0; name[k] != '\0'; k++)
 	{
 		who->name[k] = name[k];
