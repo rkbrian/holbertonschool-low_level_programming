@@ -13,8 +13,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *who;
 	char *namp, *ownp;
+	float mage;
 	int i, j, k, l;
 
+	mage = age;
 	for (i = 0; name[i] != '\0'; i++)
 	{
 	}
@@ -39,7 +41,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	ownp[l] = '\0';
 	who->name = namp;
-	who->age = age;
+	who->age = mage;
 	who->owner = ownp;
 	return (who);
 }
