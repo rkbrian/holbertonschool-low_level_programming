@@ -10,7 +10,7 @@
  * @owner: owner string
  */
 
-struct dog
+typedef struct dog dog_t;
 {
 	char *name;
 	float age;
@@ -23,7 +23,5 @@ void print_dog(struct dog *d);
 /**
  * dog_t - new name of struct dog
  */
-
-typedef struct dog dog_t;
 
 #endif
