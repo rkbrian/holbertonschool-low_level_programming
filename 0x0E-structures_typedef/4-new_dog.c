@@ -11,15 +11,30 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *whoof;
+	dog_t *who;
+	char *namp, *ownp;
+	float *agep;
+	int i, j;
 
-	whoof = malloc(sizeof(struct dog));
-	if (whoof == NULL)
+	for (i = 0; name[i] != '\0'; i++)
+	{
+	}
+	for (j = 0; owner[j] != '\0'; j++)
+	{
+	}
+	who = malloc(sizeof(struct dog) *);
+	if (who == NULL)
 	{
 		return (NULL);
 	}
-	whoof->name = name;
-	whoof->age = age;
-	whoof->owner = owner;
+	namp = malloc(sizeof(char) * i);
+	agep = malloc(sizeof(float));
+	ownp = malloc(sizeof(char) * j);
+	*namp = *name;
+	*agep = *age;
+	*ownp = *owner;
+	who->name = namp;
+	who->age = agep;
+	who->owner = ownp;
 	return (whoof);
 }
