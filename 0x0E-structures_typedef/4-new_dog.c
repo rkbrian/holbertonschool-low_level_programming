@@ -13,10 +13,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *who;
 	char *namp, *ownp;
-	float mage;
+	float *mage;
 	int i, j, k, l;
 
-	mage = age;
 	for (i = 0; name[i] != '\0'; i++)
 	{
 	}
@@ -30,6 +29,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	namp = malloc(sizeof(char) * i + 1);
 	ownp = malloc(sizeof(char) * j + 1);
+	mage = malloc(sizeof(float) + 1);
+	*mage = age;
 	for (k = 0; name[k] != '\0'; k++)
 	{
 		namp[k] = name[k];
@@ -41,7 +42,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	ownp[l] = '\0';
 	who->name = namp;
-	who->age = mage;
+	who->age = *mage;
 	who->owner = ownp;
 	return (who);
 }
