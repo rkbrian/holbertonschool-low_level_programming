@@ -24,6 +24,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	who = malloc(sizeof(struct dog));
 	if (who == NULL)
 	{
+		free(who);
 		return (NULL);
 	}
 	namp = malloc(sizeof(char) * i + 1);
@@ -42,7 +43,4 @@ dog_t *new_dog(char *name, float age, char *owner)
 	who->age = age;
 	who->owner = ownp;
 	return (who);
-	free(namp);
-	free(ownp);
-	free(who);
 }
