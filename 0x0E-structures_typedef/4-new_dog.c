@@ -26,8 +26,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	namp = malloc(sizeof(char) * i);
-	ownp = malloc(sizeof(char) * j);
+	namp = malloc(sizeof(char) * i + 1);
+	ownp = malloc(sizeof(char) * j + 1);
 	for (k = 0; name[k] != '\0'; k++)
 	{
 		namp[k] = name[k];
