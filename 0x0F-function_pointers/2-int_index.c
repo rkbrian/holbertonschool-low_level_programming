@@ -1,13 +1,13 @@
 #include "function_pointers.h"
 
 /**
- * array_iterator - function to exe a function
+ * int_index - function to search for an int
  * @array: array
- * @size: unsigned int type, size of array
- * @action: ptr to the func needed
+ * @size: size of array
+ * @cmp: ptr to the func for comparing values
  */
 
-void array_iterator(int *array, size_t size, void (*action)(int))
+int int_index(int *array, int size, int (*cmp)(int))
 {
 	unsigned int i;
 
