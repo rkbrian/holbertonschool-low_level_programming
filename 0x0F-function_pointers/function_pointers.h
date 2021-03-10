@@ -4,7 +4,10 @@
 #include <stdio.h>
 
 /**
- * prototypes for function pointers
+ * function_pointers - prototypes for function pointers
+ * print_name - print name
+ * @name: name
+ * @f: function
  */
 
 void print_name(char *name, void (*f)(char *));
