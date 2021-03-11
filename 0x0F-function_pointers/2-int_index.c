@@ -5,6 +5,7 @@
  * @array: array
  * @size: size of array
  * @cmp: ptr to the func for comparing values
+ * Return: the int approved by calc functions or 0
  */
 
 int int_index(int *array, int size, int (*cmp)(int))
