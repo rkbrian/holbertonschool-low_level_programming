@@ -2,7 +2,6 @@
 #define VARIADIC_FUNCTIONS_H
 
 #include <stdio.h>
-#include <stdarg.h>
 
 /**
  * prototypes for function pointers
