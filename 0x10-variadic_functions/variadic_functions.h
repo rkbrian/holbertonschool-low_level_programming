@@ -5,7 +5,10 @@
 #include <stdarg.h>
 
 /**
- * prototypes for function pointers
+ * variadic_functions - prototypes for function pointers
+ * sum_them_all - function to sum all the parameters
+ * @n: number of elements in the number array
+ * Return: value of sum or 0
  */
 
 int sum_them_all(const unsigned int n, ...);
