@@ -3,8 +3,8 @@
 
 /**
  * sum_them_all - function to sum all the parameters
- * @n: number of elements in the number array\
- * Return: value of sum
+ * @n: number of elements in the number array
+ * Return: value of sum or 0
  */
 
 int sum_them_all(const unsigned int n, ...)
