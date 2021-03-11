@@ -1,29 +1,64 @@
 #include <stdio.h>
+#include "3-calc.h"
 
 /**
- * get_op_func - function to select operator
- * @s: string
+ * op_add - sum
+ * @a: a
+ * @b: b
+ * Return: sum
  */
 
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
-	int i;
+	return (a + b + '0');
+}
 
-	i = 0;
-	while (i < 5)
-	{
-		i++;
-		if (ops[i][0] == *s && sizeof(s) == sizeof(char))
-		{
-			return (ops[i]);
-		}
-	}
+/**
+ * op_sub - subtract
+ * @a: a
+ * @b: b
+ * Return: difference
+ */
+
+int op_sub(int a, int b)
+{
+	return (a - b + '0');
+}
+
+/**
+ * op_mul - multiply
+ * @a: a
+ * @b: b
+ * Return: product
+ */
+
+int op_mul(int a, int b)
+{
+	int c = a * b;
+
+	return (c + '0');
+}
+
+/**
+ * op_div - divide
+ * @a: a
+ * @b: b
+ * Return: div
+ */
+
+int op_div(int a, int b)
+{
+	return (a / b + '0');
+}
+
+/**
+ * op_mod - modulo
+ * @a: a
+ * @b: b
+ * Return: num
+ */
+
+int op_mod(int a, int b)
+{
+	return (a % b + '0');
 }
