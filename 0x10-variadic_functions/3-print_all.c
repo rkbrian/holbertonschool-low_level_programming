@@ -9,14 +9,8 @@
 
 void print_all(const char * const format, ...)
 {
-	unsigned int i = 0, j = 0;
-	char *str;
-	char letar[4][2] = {
-		{"c", 'char'},
-		{"i", 'int'},
-		{"f", 'float'},
-		{"s", 'char*'},
-	};
+	unsigned int i = 0;
+	char *str, ch;
 	va_list everything;
 
 	va_start(everything, format);
@@ -25,22 +19,31 @@ void print_all(const char * const format, ...)
 	{
 		printf("(nil)");
 	}
+	switch(ch){
+	case 'c': printf("char");
+		break;
+	case 'i': printf("int");
+		break;
+	case 'f': printf("float");
+		break;
+	case 's': printf("char*");
+		break;
+	default: i++;
+
 	printf("%s", str);
 	while (format[i] != '\0')
 	{
 
-		while (letar[j][0] == format[i] && j < 4)
+		str = va_arg(everything, shwich(format[i]));
+		if (str)
 		{
-			str = va_arg(everthing, letar[j][1]);
-			if (str)
-			{
-				printf(", %s", str);
-			}
-			j++;
+			printf(", %s", str);
 		}
 		i++;
 	}
 	printf("\n");
 
-	va_end(everthing);
+	va_end(everything);
+}
+
 }
