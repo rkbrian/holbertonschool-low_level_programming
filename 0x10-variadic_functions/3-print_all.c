@@ -10,40 +10,38 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int i = 0;
-	char *str, ch;
+	char *typex, *separator;
 	va_list everything;
 
 	va_start(everything, format);
 
-	if (format == NULL)
+	separator = "";
+	while (format && format[i])
 	{
-		printf("(nil)");
-	}
-	switch(ch){
-	case 'c': printf("char");
-		break;
-	case 'i': printf("int");
-		break;
-	case 'f': printf("float");
-		break;
-	case 's': printf("char*");
-		break;
-	default: i++;
-
-	printf("%s", str);
-	while (format[i] != '\0')
-	{
-
-		str = va_arg(everything, shwich(format[i]));
-		if (str)
+		if (i > 0)
 		{
-			printf(", %s", str);
+			separator = ", ";
+		}
+ 		switch (format[i])
+		{
+		case 'c': printf("%s%c", separator, va_arg(everything, char));
+			break;
+		case 'i': printf("%s%d", separator, va_arg(everything, int));
+			break;
+		case 'f': printf("%s%f", separator, va_arg(everything, float));
+			break;
+		case 's': typex = va_arg(everything, char*);
+			if (typex == NULL)
+			{
+				printf("%s(nil)");
+				break;
+			}
+			printf("%s%s", separator, typex);
+			break;
 		}
 		i++;
 	}
 	printf("\n");
 
 	va_end(everything);
-}
-
 }
