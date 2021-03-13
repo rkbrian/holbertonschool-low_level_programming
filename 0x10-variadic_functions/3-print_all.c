@@ -10,12 +10,10 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int i = 0, j = 0;
-	char *strmem, *separator;
+	char *strmem, *separator = "";
 	va_list everything;
 
 	va_start(everything, format);
-
-	separator = "";
 	while (format && format[i])
 	{
 		switch (format[i])
@@ -46,11 +44,8 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 		if (j > 0)
-		{
 			separator = ", ";
-		}
 	}
 	printf("\n");
-
 	va_end(everything);
 }
