@@ -9,8 +9,8 @@
 
 void print_all(const char * const format, ...)
 {
-	unsigned int i = 0;
-	char *typex, *separator;
+	unsigned int i = 0, j = 0;
+	char *strmem, *separator;
 	va_list everything;
 
 	va_start(everything, format);
@@ -18,33 +18,37 @@ void print_all(const char * const format, ...)
 	separator = "";
 	while (format && format[i])
 	{
-		if (i > 0)
-		{
-			separator = ", ";
-		}
 		switch (format[i])
 		{
 		case 'c':
 			printf("%s%c", separator, va_arg(everything, int));
+			j++;
 			break;
 		case 'i':
 			printf("%s%d", separator, va_arg(everything, int));
+			j++;
 			break;
 		case 'f':
 			printf("%s%f", separator, va_arg(everything, double));
+			j++;
 			break;
 		case 's':
-			typex = va_arg(everything, char*);
-			if (typex == NULL)
+			strmem = va_arg(everything, char*);
+			if (strmem == NULL)
 			{
 				printf("%s(nil)", separator);
+				j++;
 				break;
 			}
-			printf("%s%s", separator, typex);
+			printf("%s%s", separator, strmem);
+			j++;
 			break;
-
 		}
 		i++;
+		if (j > 0)
+		{
+			separator = ", ";
+		}
 	}
 	printf("\n");
 
