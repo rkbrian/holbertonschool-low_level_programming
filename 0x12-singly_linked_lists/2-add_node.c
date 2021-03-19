@@ -25,6 +25,7 @@ list_t *add_node(list_t **head, const char *str)
 	newhead->str = strdup(str);
 	if (newhead->str == NULL)
 	{
+		free(newhead->str);
 		return (NULL);
 	}
 	for (count = 0; newhead->str[count] != '\0'; count++)
@@ -33,5 +34,6 @@ list_t *add_node(list_t **head, const char *str)
 	newhead->len = count;
 	newhead->next = *head; /* node linking */
 	*head = newhead; /* making new head */
+
 	return (newhead);
 }
