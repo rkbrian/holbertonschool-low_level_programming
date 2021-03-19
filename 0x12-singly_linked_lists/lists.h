@@ -22,6 +22,8 @@ typedef struct list_s
 
 /**
  * print_lists - and other function prototypes
+ * @h: linked list from list_t
+ * Return: node count
  */
 
 size_t print_list(const list_t *h);
