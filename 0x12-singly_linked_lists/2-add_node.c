@@ -33,7 +33,6 @@ list_t *add_node(list_t **head, const char *str)
 	}
 	newhead->len = count;
 	newhead->next = *head; /* node linking */
-	*head = newhead; /* making new head */
-
+	*head = newhead;
 	return (newhead);
 }
