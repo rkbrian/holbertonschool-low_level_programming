@@ -9,26 +9,19 @@
  */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-	list_t *newhead;
-	size_t count;
+	listint_t *newhead;
 
-	if (head == NULL || str == NULL)
+	if (head == NULL)
 	{
 		return (NULL);
 	}
 	newhead = malloc(sizeof(listint_t));
 	if (newhead == NULL)
 	{
-		return (NULL);
-	}
-	if (newhead->n == NULL)
-	{
 		free(newhead);
 		return (NULL);
 	}
-	for (count = 0; newhead->str[count] != '\0'; count++)
-	{
-	}
+	newhead->n = n;
 	newhead->next = *head; /* node linking */
 	*head = newhead;
 	return (newhead);
