@@ -2,41 +2,19 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end - function to add new node at the end
+ * pop_listint - function that deletes the head node
  * @head: first node
- * @n: integer
- * Return: the address of the new element or NULL
+ * Return: head node data n or 0 for empty linked list
  */
-listint_t *add_nodeint_end(listint_t **head, const int n)
+int pop_listint(listint_t **head)
 {
-	listint_t *newend, *tmp;
+	listint_t *newhead;
 
+	newhead = head->next;
+	newhead->n = n;
 	if (*head == NULL)
 	{
-		newend = malloc(sizeof(listint_t));
-		if (newend == NULL)
-		{
-			free(newend);
-			return (NULL);
-		}
-		newend->n = n;
-		newend->next = NULL;
-		*head = newend;
-		return (newend);
+		return (0);
 	}
-	newend = malloc(sizeof(listint_t));
-	if (newend == NULL)
-	{
-		free(newend);
-		return (NULL);
-	}
-	newend->n = n;
-	newend->next = NULL;
-	tmp = *head; /* switching start */
-	while (tmp->next != NULL)
-	{
-		tmp = tmp->next; /* direction changed */
-	}
-	tmp->next = newend; /* ending of switch */
-	return (newend);
+	return (n);
 }
