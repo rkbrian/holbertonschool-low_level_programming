@@ -4,8 +4,9 @@
 
 /**
  * _realloc - function reallocates a memory
- * @nmemb: element count
- * @size: type size in byte
+ * @ptr: a pointer to the memory previously allocated
+ * @old_size: size in bytes of the allocated space for ptr
+ * @new_size: new size in bytes of the allocated space for ptr
  * Return: pointer or null
  */
 
