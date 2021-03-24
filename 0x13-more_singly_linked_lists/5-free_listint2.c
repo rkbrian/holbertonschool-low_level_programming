@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -8,19 +10,16 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t *tmpnode;
+	listint_t *tmpnode = *head;
 
-	tmpnode = malloc(sizeof(listint_t));
-	if (tmpnode == NULL)
+	while (tmpnode != NULL)
 	{
-		free(tmpnode);
-	}
-	while (*head != NULL)
-	{
-		tmpnode->next = *head;
+		tmpnode = tmpnode->next;
 		free(*head);
 		*head = tmpnode;
 	}
-	free(*head);
-	free(tmpnode);
+	if (*head == NULL)
+	{
+		free(*head);
+	}
 }
