@@ -18,9 +18,6 @@ void free_listint2(listint_t **head)
 		free(*head);
 		*head = tmpnode;
 	}
-	if (*head == NULL)
-	{
-		free(*head);
-	}
-	*head = NULL;
+	*head == NULL;
+	free(*head);
 }
