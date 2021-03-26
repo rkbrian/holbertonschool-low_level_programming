@@ -10,10 +10,16 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int i = 1, j, k = 1, subnum, num;
 
+	if (n == 0)
+		_putchar('0');
+	else
+	{
 	while (k < _powertool(n))
 	{
 		k = k * 2;
+		subnum = subnum << 1;
 	}
+	num = num + subnum;
 	j = n - k;
 	while (j)
 	{
@@ -27,9 +33,10 @@ void print_binary(unsigned long int n)
 		j = j - _powertool(j);
 	}
 	_putchar(num + '0');
+	}
 }
 
-unsigned long int _powertool(unsigned long int a)
+int _powertool(unsigned long int a)
 {
 	unsigned long int b = 1;
 
