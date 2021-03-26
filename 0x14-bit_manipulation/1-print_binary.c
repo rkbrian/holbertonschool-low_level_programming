@@ -8,31 +8,34 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int i = 1, j, k = 1, subnum, num = 0;
+	unsigned long int i = 1, j, k = 1, l, subnum, num = 0;
 
 	if (n == 0)
-		_putchar(0);
+		_putchar('0');
 	else
 	{
-	while (k < _powertool(n))
+		l = _powertool(n);
+		subnum = 1;
+	while (k < l)
 	{
-		k = k * 2;
-		subnum = subnum << 1;
+		k = k << 1;
+		subnum = subnum * 10;
 	}
 	num = num + subnum;
 	j = n - k;
-	while (j)
+	while (j > 0)
 	{
 		subnum = 1;
-		while (i < j)
+		while (i * 2 < j)
 		{
-			subnum = subnum << 1;
-			i = i * 2;
+			subnum = subnum * 10;
+			i = i << 1;
 		}
+		i = 1;
 		num = num + subnum;
 		j = j - _powertool(j);
 	}
-	_putchar(num);
+	_putchar(num + '0');
 	}
 }
 
@@ -42,7 +45,7 @@ unsigned long int _powertool(unsigned long int a)
 
 	while ((b * 2) < a)
 	{
-		b = b * 2;
+		b = b << 1;
 	}
 	return (b);
 }
