@@ -8,8 +8,14 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int i = 1, j, k = 1, l, subnum, num = 0;
+	if (n > 1)
+	{
+		print_binary(n >> 1);
+	}
+	_putchar((n & 1) + '0');
+}
 
+/*	unsigned long int i = 1, j, k = 1, l, subnum, num = 0;
 	if (n == 0)
 		_putchar('0');
 	else
@@ -48,4 +54,4 @@ unsigned long int _powertool(unsigned long int a)
 		b = b << 1;
 	}
 	return (b);
-}
+} */
