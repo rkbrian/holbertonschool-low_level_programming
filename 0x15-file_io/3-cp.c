@@ -24,8 +24,7 @@ int main(int argc, char *argv[])
 	}
 	outputFd = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (outputFd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+	{dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	while ((numRead = read(inputFd, buffalo, BUF_SIZE)) > 0)
@@ -40,13 +39,11 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	if (close(inputFd) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[1]);
+	{dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[1]);
 		exit(100);
 	}
 	if (close(outputFd) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[2]);
+	{dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[2]);
 		exit(100);
 	}
 	return (0);
