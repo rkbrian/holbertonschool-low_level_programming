@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * createappend_text_to_file - function to append text at the end of a file
+ * append_text_to_file - function to append text at the end of a file
  * @filename: file name
  * @text_content: text content to be appended into the file
  * Return: 1 if succeeded or 0 if failed
@@ -15,7 +15,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	fd = open(filename, O_WRONLY, 0600);
+	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 	{
 		return (-1);
