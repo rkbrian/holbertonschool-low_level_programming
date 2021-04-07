@@ -5,13 +5,13 @@ char *read_cmd(void)
 	size_t bufsize = 0;
 	char *buf = NULL, *ptr = NULL, *ptr2 = NULL, ptrlen = 0;
 
-	/* buf = malloc(sizeof(char) * bufsize);
+	/* buf = malloc(sizeof(char) * 1024);
 	if (buf == NULL)
 	{
 		free(buf);
 		return (NULL);
 		} */
-	while(getline(&buf, &bufsize, stdin) != _strlen(buf))
+	while(getline(&buf, &bufsize, stdin) != 1024)
 	{
 		int buflen = _strlen(buf);
 
