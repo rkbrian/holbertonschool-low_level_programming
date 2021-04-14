@@ -31,10 +31,9 @@ char *_strncpy(char *dest, char *src, int n);
 void *_realloc(void *ptr, unsigned int new_size);
 int _strncmp(const char *s1, const char *s2, int len);
 char *_strdup(const char *str);
-int _getline(char **lineptr, size_t *n, FILE *stream);
+void _getoutof(char **command_array, char *buffer);
 /* execute function */
 void execute(char **command_array, char *buffer);
-void built_in_cmd(char **command_array, char *buffer);
 /* environmental varriable */
 char *_getenv(const char *name);
 int dir_num(char *env_path);
@@ -43,5 +42,8 @@ char *cmd_to_path(char *path, char *command);
 /* directory path checker */
 char *check_dir(char **command_array);
 void no_file(char *cmd);
+/* handle ctrl-c */
+void handle_ctrl_c(int signal);
+void built_in_cmd(char **command_array, char *buffer);
 
 #endif

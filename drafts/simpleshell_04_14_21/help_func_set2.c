@@ -79,48 +79,16 @@ char *_strdup(const char *str)
 }
 
 /**
- * _getline - function to read whole line from stream and store text buffer/
- * address into line pointer
- * @lineptr: the line pointer of buffer
- * @n: buffer size
- * @stream: the stream file of the whole line to be read
- * Return: length of the line
+ * _getoutof - function to exit shell in both child and parent processes
+ * @command_array: command array
+ * @buffer: input buffer
  */
-int _getline(char **lineptr, size_t *n, FILE *stream)
+void _getoutof(char **command_array, char *buffer)
 {
-	static char line[256];
-	char *ptr;
-	unsigned int len;
-
-	if (lineptr == NULL || n == NULL)
+	if (_strcmp(command_array[0], "exit") == 0)
 	{
-		errno = EINVAL;
-		return -1;
+		free_token(command_array);
+		free(buffer);
+		exit(EXIT_SUCCESS);
 	}
-
-	if (ferror(stream))
-		return -1;
-
-	if (feof(stream))
-		return -1;
-
-	fgets(line,256,stream);
-
-	ptr = strchr(line,'\n');
-	if (ptr)
-		*ptr = '\0';
-
-	len = strlen(line);
-
-	if ((len+1) < 256)
-	{
-		ptr = realloc(*lineptr, 256);
-		if (ptr == NULL)
-			return(-1);
-		*lineptr = ptr;
-		*n = 256;
-	}
-
-	strcpy(*lineptr,line);
-	return(len);
 }
