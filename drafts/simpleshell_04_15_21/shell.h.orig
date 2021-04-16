@@ -34,6 +34,7 @@ char *_strdup(const char *str);
 void _getoutof(char **command_array, char *buffer);
 /* execute function */
 void execute(char **command_array, char *buffer, char **argv);
+void changedir(char **command_array, char *buffer);
 /* environmental varriable */
 char *_getenv(const char *name);
 int dir_num(char *env_path);
@@ -42,7 +43,14 @@ char *cmd_to_path(char *path, char *command);
 /* directory path checker */
 char *check_dir(char **command_array, char **argv);
 void no_file(char *cmd, char **argv);
+void no_file_sh_v(char *cmd, char **argv);
 /* handle ctrl-c */
 void handle_ctrl_c(int signal);
+/* builtins */
+int check_builtins(char **command_array, char *buffer);
+<<<<<<< HEAD
+=======
+void print_the_env(void);
+>>>>>>> main
 
 #endif

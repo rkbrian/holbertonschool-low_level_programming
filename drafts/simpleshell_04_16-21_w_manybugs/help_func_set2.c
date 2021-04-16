@@ -34,7 +34,7 @@ void *_realloc(void *ptr, unsigned int new_size)
 int _strncmp(const char *s1, const char *s2, int len)
 {
 	int i;
-	char *sa, *sb;
+	/*char *sa, *sb;
 
 	sa = malloc(sizeof(char) * (len + 1));
 	if (sa == NULL)
@@ -45,21 +45,13 @@ int _strncmp(const char *s1, const char *s2, int len)
 	if (sb == NULL)
 	{
 		free(sb);
-	}
-	for (i = 0; s1[i] != '\0' && s2[i] != '\0' && i < len; i++)
+		}*/
+	for (i = 0; s1[i] != '\0' && s2[i] != '\0' && i < (len - 1); i++)
 	{
-		sa[i] = s1[i];
-		sb[i] = s2[i];
+	if (s1[i] != s2[i])
+		break;
 	}
-	while ((*sa != '\0' && *sb != '\0') && *sa == *sb)
-	{
-		sa++;
-		sb++;
-	}
-	if (*sa == *sb)
-		return (0);
-	else
-		return (*sa - *sb);
+	return (s1[i] - s2[i]);
 }
 
 /**
@@ -83,23 +75,23 @@ char *_strdup(const char *str)
  * @command_array: command array
  * @buffer: input buffer
  */
-void exit_shell(char **command_array, char *buffer)
+/*void exit_shell(char **command_array, char *buffer)
 {
 	free_token(command_array);
 	free(buffer);
-}
+	}*/
 
 /**
  * _getoutof - function to exit shell in both child and parent processes
  * @command_array: command array
  * @buffer: input buffer
  */
-void _getoutof(char **command_array, char *buffer)
+void _getoutof(char **command_array, char *buffer, int *xptr)
 {
 	if (_strcmp(command_array[0], "exit") == 0)
 	{
 		free_token(command_array);
 		free(buffer);
-		exit(EXIT_SUCCESS);
+		exit(*xptr);
 	}
 }

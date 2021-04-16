@@ -4,9 +4,10 @@
  * execute - function to execute input command
  * @command_array: input command
  * @buffer: buffer allocated for input command
+ * @argv: argument array
  */
 
-void execute(char **command_array, char *buffer)
+void execute(char **command_array, char *buffer, char **argv)
 {
 	pid_t pid;
 	char *path_command = NULL;
@@ -28,7 +29,7 @@ void execute(char **command_array, char *buffer)
 			chdir(command_array[1]);
 		else
 		{
-			path_command = check_dir(command_array);
+			path_command = check_dir(command_array, argv);
 			execve(path_command, command_array, NULL);
 		}
 	}

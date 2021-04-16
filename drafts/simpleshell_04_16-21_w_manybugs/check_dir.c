@@ -8,9 +8,9 @@
  */
 char *check_dir(char **command_array, char **argv)
 {
-	char **dir_tokens;
-	char *env_path;
-	char *matched;
+	char **dir_tokens = NULL;
+	char *env_path = NULL;
+	char *matched = NULL;
 	struct stat check;
 	int i = 0;
 
@@ -23,13 +23,18 @@ char *check_dir(char **command_array, char **argv)
 
 		if (stat(dir_tokens[i], &check) == 0)
 		{
+			free(command_array[0]);
 			matched = _strdup(dir_tokens[i]);
+			for (; dir_tokens[i] != NULL; i++)
+				free(dir_tokens[i]);
+			free(dir_tokens);
 			return (matched);
 		}
+		free(dir_tokens[i]);
 		i++;
 	}
-
+	free(dir_tokens);
 	no_file(command_array[0], argv);
 
-	return (NULL);
+	return (command_array[0]);
 }
