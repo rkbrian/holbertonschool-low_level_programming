@@ -1,7 +1,11 @@
 CC:=gcc
-SRC:=$(NAME).c
-OBJ:=$(NAME).o
-NAME:="main holberton"
-holberton:
-	$(CC) -c -o $(OBJ) $(SRC)
-	$(CC) $(OBJ) -o holberton
+SRC:=main.c holberton.c
+OBJ:=$(SRC:.c=.o)
+NAME:=holberton
+
+all: $(NAME)
+
+$(OBJ): %.o: %.c
+	$(CC) -c -o $@ $<
+holberton: $(OBJ)
+	$(CC) $(OBJ) -o $@
