@@ -1,4 +1,7 @@
 CC:=gcc
 SRC:=main.c holberton.c
-holberton:
-	$(CC) $(SRC) -o holberton
+
+all: holberton
+
+holberton: $(SRC)
+	$(CC) $^ -o $@
