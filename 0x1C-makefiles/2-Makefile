@@ -9,3 +9,4 @@ $(OBJ): %.o: %.c
 	$(CC) -c -o $@ $<
 holberton: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+.PHONY: holberton all
