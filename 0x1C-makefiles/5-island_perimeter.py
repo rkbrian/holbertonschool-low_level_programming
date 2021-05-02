@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-"""
-The grid contains the sea and the island with no lake, but possibly has bay.
-It is considered island beause it is not attaching the border.
 def island_perimeter(grid):
-endrow - the end of row, should be less than 100
-endcol - the end of column, should be less than 100
-west_coast - length count of the direction facing coast
-east_coast - length count of the direction facing coast
-north_coast - length count of the direction facing coast
-south_coast - length count of the direction facing coast
-return - return perimeter
-"""
+    """
+    The grid contains the sea and the island with no lake, but possibly has bay.
+    It is considered island beause it is not attaching the border.
+    def island_perimeter(grid):
+    endrow - the end of row, should be less than 100
+    endcol - the end of column, should be less than 100
+    west_coast - length count of the direction facing coast
+    east_coast - length count of the direction facing coast
+    north_coast - length count of the direction facing coast
+    south_coast - length count of the direction facing coast
+    return - return perimeter
+    """
 
 
-def island_perimeter(grid):
     endrow = len(grid) - 1
     endcol = len(grid[0]) - 1
     west_coast = 0
