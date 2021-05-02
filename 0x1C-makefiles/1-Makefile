@@ -3,5 +3,6 @@ SRC:=main.c holberton.c
 
 all: holberton
 
-holberton: $(SRC)
-	$(CC) $^ -o $@
+holberton:
+	$(CC) $(SRC) -o $@
+.PHONY: holberton all
