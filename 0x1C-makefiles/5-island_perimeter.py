@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Find the island perimeter """
+
+
 def island_perimeter(grid):
     """island_perimeter(grid):
 
@@ -19,6 +22,7 @@ def island_perimeter(grid):
     east_coast = 0
     north_coast = 0
     south_coast = 0
+
     for i in range(1, endrow):
         for j in range(1, endcol):
             if grid[i][j] == 1 and grid[i - 1][j] == 0:
