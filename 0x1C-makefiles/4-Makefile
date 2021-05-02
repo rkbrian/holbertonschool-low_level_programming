@@ -5,12 +5,12 @@ NAME = holberton
 RM = clean oclean fclean re
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-all: holberton
+all: $(NAME)
 
 $(OBJ): %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 holberton: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $@
 clean:
 	rm -f *~ holberton
 oclean:
