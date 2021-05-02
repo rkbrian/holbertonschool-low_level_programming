@@ -4,5 +4,5 @@ SRC:=main.c holberton.c
 all: holberton
 
 holberton:
-	$(CC) $(SRC) -o $@
+	$(CC) $(SRC) -o holberton
 .PHONY: holberton all
