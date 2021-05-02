@@ -2,16 +2,10 @@ CC = gcc
 SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 NAME = holberton
-CFLAGS = -Wall -Werror -Wextra -pedantic
+CFLAGS = -Wall -Werror -Wextra -pedantic -MMD
 
 all: $(NAME)
 
-dependencies = $(patssubst %.o, %.d, $(OBJ))
--include $(dependencies)
-DEPFLAGS = -MMD -MF $(@:.o =.d)
-
-: 
-	$(CC) $(CFLAGS) -c -o $@ $<
 holberton: $(OBJ)
 	$(CC) $(OBJ) -o $@
 clean:
