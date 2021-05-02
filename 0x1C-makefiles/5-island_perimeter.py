@@ -22,8 +22,6 @@ def island_perimeter(grid):
     east_coast = 0
     north_coast = 0
     south_coast = 0
-
-
     if grid is None:
         return 0
     else:
