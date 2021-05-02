@@ -16,27 +16,17 @@ def island_perimeter(grid):
     return: return perimeter
     """
 
-    endrow = len(grid) - 1
-    endcol = len(grid[0]) - 1
+    endrow = len(grid)
+    endcol = len(grid[0])
     west_coast = 0
     east_coast = 0
     north_coast = 0
     south_coast = 0
-    border = 0
+
 
     if grid is None:
         return 0
     elif endrow < 100 and endcol < 100:
-        for k in range(endrow + 1):
-            for l in range(endcol + 1):
-                if grid[k][0] == 1:
-                    border += 1
-                if grid[k][endcol] == 1:
-                    border += 1
-                if grid[0][l] == 1:
-                    border += 1
-                if grid[endrow][l] == 1:
-                    border += 1
         for i in range(1, endrow):
             for j in range(1, endcol):
                 if grid[i][j] == 1 and grid[i - 1][j] == 0:
@@ -47,5 +37,5 @@ def island_perimeter(grid):
                     north_coast += 1
                 if grid[i][j] == 1 and grid[i][j + 1] == 0:
                     south_coast += 1
-        perimeter = west_coast + east_coast + north_coast + south_coast + border
+        perimeter = west_coast + east_coast + north_coast + south_coast
         return perimeter
