@@ -16,4 +16,4 @@ oclean:
 	rm -f $(OBJ)
 fclean: clean oclean
 re: oclean $(NAME)
-.PHONY: holberton all $(RM)
+.PHONY: $(NAME) all $(RM)
