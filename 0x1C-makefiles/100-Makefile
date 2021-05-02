@@ -6,7 +6,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic -MMD
 
 all: $(NAME)
 
-holberton: $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $@
 clean:
 	$(RM) *~ $(NAME)
@@ -14,4 +14,4 @@ oclean:
 	$(RM) $(OBJ)
 fclean: clean oclean
 re: oclean $(NAME)
-.PHONY: holberton all clean oclean fclean re $(CFLAGS)
+.PHONY: $(NAME) all clean oclean fclean re $(CFLAGS)
