@@ -27,8 +27,8 @@ def island_perimeter(grid):
     if grid is None:
         return 0
     elif endrow < 100 and endcol < 100:
-        for i in range(0, endrow + 1):
-            for j in range(0, endcol + 1):
+        for i in range(0, endrow):
+            for j in range(0, endcol):
                 if grid[i][j] == 1 and grid[i - 1][j] == 0:
                     west_coast += 1
                 if grid[i][j] == 1 and grid[i + 1][j] == 0:
