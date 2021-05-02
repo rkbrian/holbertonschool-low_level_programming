@@ -11,9 +11,9 @@ $(OBJ): %.o: %.c
 holberton: $(OBJ)
 	$(CC) $(OBJ) -o $@
 clean:
-	rm -f *~ holberton
+	rm -f *~ $(NAME)
 oclean:
 	rm -f $(OBJ)
 fclean: clean oclean
-re: oclean holberton
+re: oclean $(NAME)
 .PHONY: holberton all $(RM)
