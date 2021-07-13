@@ -1,3 +1,6 @@
+# name of the executable: holberton
+# rules: all
+
 all: holberton
 
 holberton: main.c holberton.c

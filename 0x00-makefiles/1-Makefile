@@ -1,0 +1,13 @@
+# name of the executable: holberton
+# rules: all
+# CC: the compiler to be used
+# SRC: the .c files
+
+CC = gcc
+SRC = main.c holberton.c
+
+all: holberton
+
+holberton:
+	$(CC) $(SRC) -o $@
+.PHONY: holberton all
