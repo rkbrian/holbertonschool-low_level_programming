@@ -12,9 +12,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int i;
 	hash_node_t *haha_snow = NULL, *tmp = NULL;
 
-	if (key == NULL)
+	if (key == NULL || ht == NULL)
 		return (0);
 	i = key_index((const unsigned char *)(key), ht->size);
+	haha_snow = malloc(sizeof(hash_node_t));
+	if (haha_snow == NULL)
+		return (0);
 	if (strcmp(ht->array[i]->key, key) == 0)
 	{
 		ht->array[i]->value = realloc(ht->array[i]->value,
@@ -23,19 +26,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		haha_snow->key = malloc(sizeof(char) * (strlen(key) + 1));
-                if (haha_snow->key == NULL)
-                        return (0);
-                strcpy(haha_snow->key, key);
+		haha_snow->key = strdup(key);
                 if (value == NULL)
                         haha_snow->value = NULL;
                 else
-                {
-                        haha_snow->value = malloc(sizeof(char) * (strlen(value) + 1));
-                        if (haha_snow->value == NULL)
-                                return (0);
-                        strcpy(ht->array[i]->value, value);
-                }
+                        haha_snow->value = strdup(value);
+		haha_snow->next = NULL;
 		if (ht->array[i] == NULL)
 			ht->array[i] = haha_snow;
 		else if (strcmp(ht->array[i]->key, key) != 0)
