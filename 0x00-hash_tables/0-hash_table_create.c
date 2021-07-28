@@ -20,5 +20,5 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	for (; i < size; i++)
 		haha->array[i] = NULL; /* pointer to hash nodes, starting with null */
-	return (current_t);
+	return (haha);
 }
