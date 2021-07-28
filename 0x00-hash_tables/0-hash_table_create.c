@@ -8,13 +8,17 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_node_t **current;
+	hash_table_t *haha = NULL;
+	unsigned long int i = 0;
 
-	while (*current != NULL)
-	{
-		*current->key = malloc(sizeof(char) * size);
-		*current->value = malloc(sizeof(char) * size);
-		*current = *current->next;
-	}
-	return (current);
+	haha = malloc(sizeof(hash_table_t));
+	if (haha == NULL)
+		return (NULL);
+	haha->size = size;
+	haha->array = malloc(sizeof(hash_node_t) * size);
+	if (haha->array == NULL)
+		return (NULL);
+	for (; i < size; i++)
+		haha->array[i] = NULL; /* pointer to hash nodes, starting with null */
+	return (current_t);
 }
