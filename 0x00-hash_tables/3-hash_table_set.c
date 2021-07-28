@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *haha_snow = NULL, *tmp = NULL;
 
 	if (key == NULL)
-		return (1);
+		return (0);
 	i = key_index((const unsigned char *)(key), ht->size);
 	if (strcmp(ht->array[i]->key, key) == 0)
 	{
@@ -25,7 +25,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		haha_snow->key = malloc(sizeof(char) * (strlen(key) + 1));
                 if (haha_snow->key == NULL)
-                        return (1);
+                        return (0);
                 strcpy(haha_snow->key, key);
                 if (value == NULL)
                         haha_snow->value = NULL;
@@ -33,7 +33,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
                 {
                         haha_snow->value = malloc(sizeof(char) * (strlen(value) + 1));
                         if (haha_snow->value == NULL)
-                                return (1);
+                                return (0);
                         strcpy(ht->array[i]->value, value);
                 }
 		if (ht->array[i] == NULL)
@@ -45,5 +45,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			ht->array[i] = haha_snow;
 		}
 	}
-	return (0);
+	return (1);
 }
