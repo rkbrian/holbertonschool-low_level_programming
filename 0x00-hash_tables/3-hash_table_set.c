@@ -17,7 +17,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	i = key_index(key, ht->size);
 	if (strcmp(ht->array[i]->key, key) == 0)
 	{
-		ht->array[i]->value = realloc(ht->array[i]->value, (sizeof(char) * (strlen(key) + 1)));
+		ht->array[i]->value = realloc(ht->array[i]->value,
+					      (sizeof(char) * (strlen(key) + 1)));
 		strcpy(ht->array[i]->value, value);
 	}
 	else
