@@ -19,10 +19,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (haha_snow == NULL)
 		return (0);
 	haha_snow->key = strdup(key);
-	if (value == NULL)
-		haha_snow->value = NULL;
-	else
-		haha_snow->value = strdup(value);
+	haha_snow->value = strdup(value);
 	haha_snow->next = NULL;
 	if (ht->array[i] == NULL || strcmp(ht->array[i]->key, key) == 0)
 		ht->array[i] = haha_snow;
