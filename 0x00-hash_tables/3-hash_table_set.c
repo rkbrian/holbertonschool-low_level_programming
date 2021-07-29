@@ -21,8 +21,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	haha_snow->key = strdup(key);
 	haha_snow->value = strdup(value);
 	haha_snow->next = NULL;
-	if (ht->array[i] == NULL || strcmp(ht->array[i]->key, key) == 0)
+	if (ht->array[i] == NULL)
 		ht->array[i] = haha_snow;
+	else if (strcmp(ht->array[i]->key, key) == 0)
+	{
+		free(ht->array[i]->key);
+		free(ht->array[i]->value);
+		free(ht->array[i]);
+		ht->array[i] = haha_snow;
+	}
 	else
 	{
 		tmp = ht->array[i];
