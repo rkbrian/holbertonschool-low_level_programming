@@ -1,2 +1,0 @@
-#!/bin/bash
-tr "\n" ":" | cut -d ":" -f {1..nl..2} | tr ":" "\n"
