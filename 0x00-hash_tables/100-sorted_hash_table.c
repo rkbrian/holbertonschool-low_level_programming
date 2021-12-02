@@ -16,7 +16,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 	haha->array = malloc(sizeof(shash_node_t *) * size);
 	if (haha->array == NULL)
 		return (NULL);
-        haha->shead = NULL, haha->stail = NULL;
+	haha->shead = NULL, haha->stail = NULL;
 	return (haha);
 }
 
@@ -24,8 +24,8 @@ shash_table_t *shash_table_create(unsigned long int size)
  * shash_table_set - function that adds an element to the ordered hash table
  * @ht: the ordered hash table to be added or updated the key/value to
  * @key: the key, can not be null
- * @value: the value associated with the key, could be null, bust be duplicated,
- *  the key/value pair should be inserted in the sorted list at the right place,
+ * @value: the value associated with the key, could be null, must be duplicatd,
+ *  the key/value pair will be inserted in the sorted list at the right place,
  *  keys sorted in ASCII value
  * Return: 1 if succeeded, 0 for failure
  */
@@ -57,7 +57,11 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	return (1);
 }
 
-
+/**
+ * insertion_list - function to insert a hash node in sorted order
+ * @ht: the ordered hash table to be added or updated
+ * @haha: the new node
+ */
 void insertion_list(shash_table_t *ht, shash_node_t *haha)
 {
 	shash_node_t *current = NULL;
@@ -76,20 +80,20 @@ void insertion_list(shash_table_t *ht, shash_node_t *haha)
 	else
 	{
 		current = ht->shead;
-                if (_strcmp(haha->key, current->key) >= 0)
-                {
-		        while (current && current->snext && _strcmp(haha->key, current->key) >= 0)
-			        current = current->snext;
-                }
-                if (!current)
-                        ht->stail->snext = haha, haha->sprev = ht->stail, ht->stail = haha;
-                else if (current == ht->shead)
-                        ht->shead->sprev = haha, haha->snext = ht->shead, ht->shead = haha;
-                else
-                {
-                	current->sprev->snext = haha, haha->sprev = current->sprev;
-                        current->sprev = haha, haha->snext = current;
-                }
+		if (_strcmp(haha->key, current->key) >= 0)
+		{
+			while (current && current->snext && _strcmp(haha->key, current->key) >= 0)
+				current = current->snext;
+		}
+		if (!current)
+			ht->stail->snext = haha, haha->sprev = ht->stail, ht->stail = haha;
+		else if (current == ht->shead)
+			ht->shead->sprev = haha, haha->snext = ht->shead, ht->shead = haha;
+		else
+		{
+			current->sprev->snext = haha, haha->sprev = current->sprev;
+			current->sprev = haha, haha->snext = current;
+		}
 	}
 }
 
@@ -155,8 +159,6 @@ void shash_table_print(const shash_table_t *ht)
 			if (non_linked_comma_flag > 0)
 				printf(", ");
 			printf("\'%s\': \'%s\'", bash_table->key, bash_table->value);
-			if (bash_table->snext != NULL)
-				printf(", ");
 			bash_table = bash_table->snext;
 			non_linked_comma_flag = 1;
 		}
@@ -182,8 +184,6 @@ void shash_table_print_rev(const shash_table_t *ht)
 			if (non_linked_comma_flag > 0)
 				printf(", ");
 			printf("\'%s\': \'%s\'", bash_table->key, bash_table->value);
-			if (bash_table->sprev != NULL)
-				printf(", ");
 			bash_table = bash_table->sprev;
 			non_linked_comma_flag = 1;
 		}
