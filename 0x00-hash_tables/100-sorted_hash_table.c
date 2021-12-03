@@ -46,14 +46,12 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		ht->array[i] = haha_snow;
 	else if (strcmp(ht->array[i]->key, key) == 0)
 	{
-		if (ht->array[i]->sprev)
-			ht->array[i]->sprev->snext = ht->array[i]->snext;
-		if (ht->array[i]->snext)
-			ht->array[i]->snext->sprev = ht->array[i]->sprev;
-		free(ht->array[i]->key);
 		free(ht->array[i]->value);
-		free(ht->array[i]);
-		ht->array[i] = haha_snow;
+		ht->array[i]->value = strdup(value);
+		free(haha_snow->key);
+		free(haha_snow->value);
+		free(haha_snow);
+		return (1);
 	}
 	else
 		tmp = ht->array[i], haha_snow->next = tmp, ht->array[i] = haha_snow;
