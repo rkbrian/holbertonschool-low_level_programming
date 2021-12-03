@@ -82,7 +82,7 @@ void insertion_list(shash_table_t *ht, shash_node_t *haha)
 		current = ht->shead;
 		if (_strcmp(haha->key, current->key) >= 0)
 		{
-			while (current && current->snext && _strcmp(haha->key, current->key) >= 0)
+			while (current && _strcmp(haha->key, current->key) >= 0)
 				current = current->snext;
 		}
 		if (!current)
