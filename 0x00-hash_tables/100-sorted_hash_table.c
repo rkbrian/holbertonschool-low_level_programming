@@ -46,9 +46,9 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		ht->array[i] = haha_snow;
 	else if (strcmp(ht->array[i]->key, key) == 0)
 	{
-		free(ht->array[i]->key);
-		free(ht->array[i]->value);
-		free(ht->array[i]);
+		/*free(ht->array[i]->key);*/
+		/*free(ht->array[i]->value);*/
+		/*free(ht->array[i]);*/
 		ht->array[i] = haha_snow;
 	}
 	else
