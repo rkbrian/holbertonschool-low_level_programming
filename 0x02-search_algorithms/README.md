@@ -37,8 +37,9 @@ What is the space complexity (worst case) of a binary search in an array of size
 ### 6. Big O #4
 What is the space complexity of this function / algorithm?
 
-int **allocate_map(int n, int m)
+int **allocate_map(int n, int m)\
 {
+
      int **map;
 
      map = malloc(sizeof(int *) * n);
@@ -52,7 +53,7 @@ int **allocate_map(int n, int m)
 ### 100. Jump search
 
 ### 101. Big O #4
-
+What is the time complexity (average case) of a jump search in an array of size n, using step = sqrt(n)?
 ### 102. 
 
 ### 103. 
