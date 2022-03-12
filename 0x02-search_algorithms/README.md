@@ -48,3 +48,13 @@ int **allocate_map(int n, int m)
      }
      return (map);
 }
+
+### 100. Jump search
+
+### 101. Big O #4
+
+### 102. 
+
+### 103. 
+
+### 104. 
