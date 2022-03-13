@@ -18,7 +18,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		low_bound = high_bound, high_bound = high_bound->express;
 		if (high_bound)
 		{
-			printf("Value checked at index[%ld] = [%d]\n", high_bound->index,
+			printf("Value checked at index [%ld] = [%d]\n", high_bound->index,
 			high_bound->n);
 			if (high_bound->n > value)
 				break;
@@ -34,7 +34,8 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	high_bound->index);
 	while (low_bound && low_bound != high_bound->next)
 	{
-		printf("Value checked at index[%ld] = [%d]\n", low_bound->index, low_bound->n);
+		printf("Value checked at index [%ld] = [%d]\n", low_bound->index,
+		low_bound->n);
 		if (low_bound->n == value)
 			return (low_bound);
 		low_bound = low_bound->next;
