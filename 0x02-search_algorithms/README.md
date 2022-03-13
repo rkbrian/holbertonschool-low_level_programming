@@ -54,8 +54,13 @@ int **allocate_map(int n, int m)\
 
 ### 101. Big O #4
 What is the time complexity (average case) of a jump search in an array of size n, using step = sqrt(n)?
-### 102. 
+### 102. Interpolation search
+probe position = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]))
+### 103. Exponential search
+powers of 2 as exponential ranges to search
+### 106. Linear search in a skip list
 
-### 103. 
-
-### 104. 
+### 107. Big O #5
+What is the time complexity (average case) of a jump search in a singly linked list of size n, using step = sqrt(n)?
+### 108. Big O #6
+What is the time complexity (average case) of a jump search in a skip list of size n, with an express lane using step = sqrt(n)?
