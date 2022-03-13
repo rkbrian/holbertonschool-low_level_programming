@@ -6,3 +6,5 @@
 	gcc -Wall -Wextra -Werror -pedantic 100-main.c 100-jump.c -lm -o 100-jump
 102-interpolation:
 	gcc -Wall -Wextra -Werror -pedantic 102-main.c 102-interpolation.c -o 102-interpolation
+103-exponential:
+	gcc -Wall -Wextra -Werror -pedantic 103-main.c 103-exponential.c -o 103-exponential
