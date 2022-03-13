@@ -8,3 +8,5 @@
 	gcc -Wall -Wextra -Werror -pedantic 102-main.c 102-interpolation.c -o 102-interpolation
 103-exponential:
 	gcc -Wall -Wextra -Werror -pedantic 103-main.c 103-exponential.c -o 103-exponential
+106-linear:
+	gcc -Wall -Wextra -Werror -pedantic 106-main.c 106-linear_skip.c skiplist/*.c -lm -o 106-linear
