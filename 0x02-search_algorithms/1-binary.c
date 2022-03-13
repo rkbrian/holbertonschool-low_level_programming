@@ -32,11 +32,10 @@ int binary_search(int *array, size_t size, int value)
 		for (i = left_i; i < right_i; i++)
 			printf("%d, ", array[i]);
 		printf("%d\n", array[i]);
-		/* sleep(2); */
 	}
 	if (array[mid] == value && (left_i <= right_i))
 		return (mid);
-	else if (left_i == right_i && right_i == value)
+	else if (left_i == right_i && array[right_i] == value)
 		return (right_i);
 	return (-1);
 }

@@ -4,3 +4,5 @@
 	gcc -Wall -Wextra -Werror -pedantic 1-main.c 1-binary.c -o 1-binary
 100-jump:
 	gcc -Wall -Wextra -Werror -pedantic 100-main.c 100-jump.c -lm -o 100-jump
+102-interpolation:
+	gcc -Wall -Wextra -Werror -pedantic 102-main.c 102-interpolation.c -o 102-interpolation
